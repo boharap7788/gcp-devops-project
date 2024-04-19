@@ -4,12 +4,12 @@ app = Flask(__name__)
 
 # ASCII art for Flask logo with project name and infinity sign
 flask_logo = '''
-      _ _       
-     | (_)      
-  ___| |_  __ _ 
- / __| | |/ _` |
- \__ \ | | (_| |
- |___/_|_|\__,_|
+       _______   _______   
+ /  ___  \ /  ___  \  
+|  |   |  ||  |   |  | 
+|  |___|  ||  |___|  | 
+ \_______/ \_______/  
+
     GCP-DEVOPS-PROJECT
             ∞
 '''
