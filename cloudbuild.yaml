@@ -1,7 +1,7 @@
 steps:
   # Step to build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/learning-gcp-418416/gcpdevops:latest', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/gcpdevops', '.']
 
   # Step to deploy the application to Kubernetes
   - name: 'gcr.io/cloud-builders/gke-deploy'
@@ -16,4 +16,4 @@ steps:
 
 images:
   # Push the built Docker image to Google Container Registry (GCR)
-  - 'gcr.io/learning-gcp-418416/gcpdevops:latest'
+  - 'gcr.io/$PROJECT_ID/gcpdevops'
