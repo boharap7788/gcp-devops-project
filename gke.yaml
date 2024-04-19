@@ -24,8 +24,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: gke-gcp-service
-  namespace: gcp-devops-prod
+  name: gke-gcp-service-dev
+  namespace: gcp-devops-dev
   
 spec:
   type: LoadBalancer
