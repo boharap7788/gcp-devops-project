@@ -20,3 +20,19 @@ spec:
           env:
           - name: PORT
             value: "5000"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gke-gcp-service
+  namespace: gcp-devops-prod
+  
+spec:
+  type: LoadBalancer
+  selector:
+    app: gcp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5000
+
