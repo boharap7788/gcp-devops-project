@@ -4,7 +4,7 @@ steps:
     args: ['build', '-t', 'gcr.io/learning-gcp-418416/gcpdevops:latest', '.']
 
   # Step to deploy the application to Kubernetes
-  - name: 'gcr.io/cloud-builders/kubectl'
+  - name: 'gcr.io/cloud-builders/gke-deploy'
     args:
       - 'apply'
       - '-f'
