@@ -1,0 +1,7 @@
+steps:
+# Step to build the Docker image
+- name: 'docker'
+  args: ['build','-t','gcr.io/$PROJECT_ID/gcpdevops','.']
+images:
+# Push the built Docker image to Google Container Registry (GCR)
+- 'gcr.io/$PROJECT_ID/gcpdevops'
