@@ -1,7 +1,19 @@
 steps:
-# Step to build the Docker image
-- name: 'docker'
-  args: ['build','-t','gcr.io/$PROJECT_ID/gcpdevops','.']
+  # Step to build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/learning-gcp-418416/gcpdevops:latest', '.']
+
+  # Step to deploy the application to Kubernetes
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args:
+      - 'apply'
+      - '-f'
+      - 'gke.yaml'
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'  # Replace with your GCP zone
+      - 'CLOUDSDK_CONTAINER_CLUSTER=gke-devops-gcp'  # Replace with your GKE cluster name
+      - 'CLOUDSDK_KUBE_NAMESPACE=gcp-devops-prod'  # Specify the namespace here
+
 images:
-# Push the built Docker image to Google Container Registry (GCR)
-- 'gcr.io/$PROJECT_ID/gcpdevops'
+  # Push the built Docker image to Google Container Registry (GCR)
+  - 'gcr.io/learning-gcp-418416/gcpdevops:latest'
