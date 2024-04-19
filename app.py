@@ -8,4 +8,4 @@ def hello_world():
 
 @app.route('/app')
 def hello_world():
-    return 'Hello,This is Simple Flask Application !!'
+    return ' Application !!'
